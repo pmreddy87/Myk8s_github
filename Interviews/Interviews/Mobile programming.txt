@@ -1,0 +1,57 @@
+1. git branching strategy
+
+2. have you ever created kubenetes cluster and how
+
+3. in Terraform how you can you create aws instance and deploy into server
+
+4. git pull = git fetch and git merge
+
+5. application load balancer
+
+6. how you used write yaml in ansible
+
+7. types of jenkins pipesline - declarative and scripted
+
+8. in multi stage jenkins pipe line some error happened in between stage how can you move in
+
+9. have you can enter into docker container
+
+10. how you check logs in docker and kubernetes
+
+11. what are the types of issues in your daily work schedule
+
+12. public subnet and private subnet
+
+13. how could you create instance on private subnet
+
+14. kubernetes master and slave- (components)
+
+15. How do you establish connection between master and slave in jenkins
+
+16. What is need of slave servers in Jenkins
+
+17. How will create instance or link through S3 bucket
+
+18. what is docker file, have you written any file example in docker and how you can write
+
+19. What is entry point and CMD in docker file
+
+      CMD command is ignored by daemon when there are parameter stated with in the docker run command
+
+      Entry point commands are not ignored but instead are appended as commandline parameters 
+      by treating those as arguments of command.
+
+
+20. what is copy and add command in docker.
+
+21. elastic block storage
+
+22. elastic laod balancer
+
+23. IAM in AWS and its importance
+
+24. Have your created role in IAM
+
+25. What is SNS in AWS
+
+26. What is namespace in k8s

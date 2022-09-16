@@ -1,0 +1,82 @@
+Steps for installation of Kubernets and cluster creation
+..............................................................................
+
+
+sudo apt-get update
+.............................................................................
+
+Docker install
+
+sudo apt-get install docker.io
+docker ––version
+..................................................................
+
+Docker enble and start
+
+sudo systemctl enable docker
+sudo systemctl status docker
+sudo systemctl start docker
+..................................................................
+
+Install kubernetes
+
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+sudo apt-get install curl
+....................................................................................
+
+Install repository for kubernetes
+
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+.....................................................................................
+
+Kubernetes installation tools
+
+sudo apt-get install kubeadm kubelet kubectl
+sudo apt-mark hold kubeadm kubelet kubectl
+kubeadm version
+................................................................................
+Begin deployment
+
+sudo swapoff –a
+....................................................................................
+
+Assign unique name kubernetes for each server node
+
+sudo hostnamectl set-hostname master-node
+.....................................................................................
+
+Assign unique name kubernetes for each server node
+
+sudo hostnamectl set-hostname worker01
+....................................................................................
+Install into kubernetes master server
+
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+..................................................................................
+
+Execute these three commands on master server
+................................................................................................
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+..............................................................................................
+ Final command into nodes
+
+kubeadm join 172.31.1.222:6443 --token ii7rsc.mvh93jsvwlxvwsrq \
+        --discovery-token-ca-cert-hash sha256:b8eebcf27798e0ba65701e55b081068d872125cb54379c589509896e20c39c38
+
+To deploy podnetwork into cluster -final command into master
+----------------------------------------------------------------------------------------------------------
+sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+ name: hello-pod
+spec:
+ containers:
+   - name: first-container
+     image: nginx
+     ports:     - containerPort: 80

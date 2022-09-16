@@ -1,0 +1,41 @@
+                                  KUBERNETES
+
+
+kubeadm - kubeadm is bootstrap of kubernets cluster
+
+Kubelet - It is component it runs on all the applications do things like  creation, deletion, modify and also used to create pods and containers
+
+Kubectl - it is CLi interface use to interact with cluster
+
+
+
+
+
+Creation Replication controller file
+
+
+myrc.yml
+.............................................................................
+apiversion: v1
+kind: replication controller
+metadata:
+name: myonlineapp-rc
+
+spec: 
+  replicas:3
+selector:
+    app: myonlineapp
+    template:
+    metadata:
+    labels:
+    app: myonlineapp
+
+spec: 
+container: 
+-name: myonlineapp-container
+ image: maha4iac/myonlineapp:2
+ ports:
+   -container port: 8080
+...................................................................................
+
+

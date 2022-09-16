@@ -1,0 +1,104 @@
+                                TERRAFORM (Infrastructure as code- IAC)
+Declarative
+
+All devops tools are declarative
+CPU :
+Memory:
+OS:
+Puppet role: 
+
+
+
+Terraform file
+
+1. Variable
+2. Resource
+3. Provider
+4. Output
+
+Terraform construct
+1. Providers
+2. Resources
+3. Providers
+
+Terrafrom Execution 
+1. Plan
+2. Apply
+3. Destroy
+
+
+
+
+
+
+
+
+Hashi corp configuration language
+
+This is similar to AWSCLI 
+
+you can visit site registry of terraform oi for any sample scripts
+
+All the execute file data is used to save on its file even after deletion
+
+All the script of the Terraform which we are writing in VS Code is in JSON script
+
+create a foler in D drive
+
+open that folder in VS code and and create one more folder under the main folder
+
+create new file
+
+start writing of Terrform script for creatio of Instance
+
+Creat one more new file 
+
+for saving of variables in it for security purpose.
+
+
+Create AWS IAM 
+
+access key
+secrete key
+
+Terraform commands in regular usage
+
+terraform plan -vars -file .\myvars.tfvars
+terraform apply -vars -file .\myvars.tfvars
+terraform destroy -vars -file .\myvars.tfvars
+
+terraform init
+terraform plan
+terraform apply
+terraform destroy
+
+1. Variable - region, accesskey, secretkey
+2. Provider - AWS, AZURE, GCP
+3. Resources - VPC, SUBNET,IGC
+4. output - ID out of desire service
+
+
+for connection and need to apply of linux commands over there
+5. Provision -apache, apt-get update, linux commands
+6. Connection - SSH, pem file
+7. tag - NAME TAGE
+
+we need to create a yml file with filename (myvars.tfvars)
+in this 
+
+we can save our 
+variables like
+region ID -  XXXXXXXX
+access key - XXXXXXXX
+secret key - XXXXXXXX
+
+finally 
+you can crate aws server
+vpc creation
+login connection with ssh
+apt-get update
+
+terraform plan -vars -file .\myvars.tfvars
+terraform apply -vars -file .\myvars.tfvars
+terraform destroy -vars -file .\myvars.tfvars
+ 

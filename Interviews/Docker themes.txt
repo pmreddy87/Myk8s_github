@@ -1,0 +1,251 @@
+1.Install docker get.docker.com
+you can check in internet step by step procedure for installation of docker
+
+2. tomcat creating containers with different images
+3. nginx
+4. jenkins
+5. docker version 20.10.16
+6. In aws only can create all these
+7. google how to install docker on ubuntu 18
+8. paste public ip and enter into webserver
+9. we can create n number of containers using single image
+10. docker start run stop three stages
+11. to create container 
+
+    docker run --name myc1 -d -p 8080:8081 nginx
+
+12. docker ps
+
+13. docker ps -a
+
+14. docker rmi image id
+
+15. docker rm <container id> -f
+
+16. docker ps -a to look all container whether present status
+
+17. docker images
+
+18. docker pull nginx
+
+19. docker architecture
+
+20. docker client - docker daemon- docker registry/ hub.docker.comm- local registry- container will be created
+
+21. docker exec -it myc1 /bin/bash  to enter into container
+
+22. net work build bridge for 2 or n number of container
+
+23. docker volumes to store data
+
+24. data storing in docker through sha256
+
+25.  cd var/lib/docker/image/overlay2/imagedb/content/sha256
+
+26. creating docker image by writing docke file
+
+27. vi docker file
+
+28. FROM ubuntu 14.04
+    MAINTAINER RAJU
+    RUN apt-get update
+    CMD "echo", "this is my first container"
+:wq!
+
+29. docker build -t myimage:1 .
+
+30. docker run myimage:1
+
+31. CMD only execute on terminal run time to run always we need replace CMD ["ping", "google.com"]
+
+32. docker rm $(docker ps -a -q) -f
+
+33. docker rmi $(docker images -q)
+
+34. deploying java application (search tomcat in docker hub)
+
+35. jenkins is java aplication
+
+36. vi docker file 
+     FROM tomcat: 8.5.37-jre8
+     MAINTAINER maha
+     RUN apt-get update
+     COPY jenkins.war /usr/local/tomcat/webapps
+     EXPOSE: 8080 
+
+37. wget (copy the jenkins war file)
+
+38. jenkins image has been created
+
+39. to work always CMD catalina.sh file is required
+
+40. docker build -t myjenkinsimage:1 . created image
+
+41. docker run -d myjenkinsimage:1 created container
+
+42. docker run --name myc1 -d -p 8081:8080 myjenkinsimage:1
+
+43. docker ps -a
+
+44. copy public ip:8081 this will directs to tomcat webpage
+
+45. copy public ip:8081/jenkins to connect through internet in web browser
+
+46. docker exec -it myc1 
+
+47. cat jenkins url
+provide password
+
+48. go to jenins web page and signup with credentials
+
+49. these are will be use in CI/CD pipe line
+
+50. ADD and COPY commands while writing docker file 
+ while using COPY jenkins.war will be used
+
+51. while using ADD directly jenkins URL is enough
+
+52. how to upload into hub.docker.com
+
+53.create server clear all containers and images
+
+54. go in to s3 bucket
+
+55. replace war file
+
+56. sigup in hub.docker.com
+
+57. docker login 
+user name
+passwrd
+
+58. to fix name in hub.docker.com 
+
+59. docker tag myjavaimage:1 maha4iac/myjavaiamge24may22:1
+
+60. docker push
+
+61. docker run --name myc1 -d -p 8081:8080 maha4iac/myjavaiamge24may22:1
+
+62. enter into container create f1 f2 f3 files
+
+63. unfortunately if we lost the container we loose data
+
+64. docker run --name myc1 -v/myvolume -d -p 8081:8080 maha4iac/myjavaiamge24may22:1
+
+65. docker ps
+
+66. docker volume
+
+67. docker inspect myc1
+
+68. enter into container docker exec -it myc1 bin/bash
+
+69. df -h to know mount points of volumes
+
+70. cd /myvolume/
+
+71. touch f1 f2 f3
+
+72. exit 
+
+73. docker inspect myc1 
+
+74. copy source of volume location
+
+75. cd /var/lib/docker volumes
+
+76. cd volume ID
+
+77. ls
+
+78. cd -data/
+
+79. ls
+
+80. f1 f2 f3
+
+81. myc1 f1 f2 and myc2 e1 e2
+
+82. create myc2 
+
+83. df -h
+
+84. cd /myvolume/
+
+85. ls
+
+86. touch e1 e2
+
+87. cd /var/lib/docker volumes/volume ID /-data
+
+88. now remove all docker containers
+
+89. docker rm $(docker ps -q) -f
+
+90. docker volume ls
+
+91. docker prune for removing unused containers and images and volumes
+
+92. docker host 
+for c1 and c2 if we change any file and add ons to c1 then it will automatically get same changes in c2 also
+
+93. docker ps -a
+
+94. mkdir /home/ubuntu/mydocker
+
+95. docker run --name myc1 -v /home/ubuntu/mydocker: /myvolume -d -p 8081:8080 maha4iac/myjavaimage24may22:1
+
+96. Net work topology for bridge
+
+97. docker network create -d bridge --subnet 192.168.1.0/24 mahanetwork
+
+98. on top of this network we will crate 2 containers.
+
+99. docker run --name myc1 --network mahanetwork -d -p 8081:8080 maha4iac/myjavaimage4may22:1
+
+100. same as create myc2
+
+101. docker imspect myc1 
+
+102. docker imspect myc2 
+
+103. after finding each of ip address 
+
+104. ping 192.168.1.3 pinging from myc1 to myc2
+
+105 docker control groups
+
+106. memory and swap memory fixing
+
+107. CPU utilisation fixing
+
+108. docker compose...........................................................
+   1. download docker from get.docker.com 
+execute two commands for insatallation
+2. go into git repo
+   get into docker compose repo
+
+execute 3 commands
+for docker compose installation
+
+copy the script in  docker.yml file 
+
+paste the same in
+
+
+# vi docker-compose.yml - paste and save
+
+# docker-compose up -d
+docker ps
+docker ps -a
+docker images
+
+- Copy the public ip and paste on webbrowser - ipaddress:8080
+you will redirect to workd press website
+
+
+# docker-compose down
+
+ 
+

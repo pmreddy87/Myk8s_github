@@ -1,0 +1,58 @@
+1. AWS in snowball
+
+2. S3 bucket
+
+3. full form of AWS-S3 - simple storage sevice
+
+4. different types AWS -S3 storage classes
+any root level folder we call it as bucket 
+any sub folder you create in a bucket is called as folder
+files stored in a folder called as objects
+
+you must select a region to upload anydata into the S3 bucket.
+better choose your near by region for transfer latency
+
+
+
+5. How can we send mail request to AWS S3
+
+6. How many subnets can have in VPC- any limit is there
+
+7. How do you monitoring VPC- cloudwatch, Autoscaling - multiple ways
+
+8. Can i change Private IP address of Instance
+
+9. How you deploy a container or sevice -Kubernetes
+
+10. namespace
+
+11. How many namespaces can we have or set in kubernetes
+
+12. Docke build image - command
+
+13. container creation command-
+
+14. how can i check container logs -Docker inspect
+
+15. How can you into the command - docker exec -it myc1 /bin/bash
+
+16. How can you able switch from vm1 to vm2 - ping ip address 
+
+17. CP and SCP
+
+18. How to check last 10 lines in liux
+
+19. git pull and git fetch
+
+20. Which command use to create git repository
+
+21. How can you configure in user name -git instead of again and again asking
+
+22. How can you adding node in jenkins ???
+
+ 
+
+
+
+
+

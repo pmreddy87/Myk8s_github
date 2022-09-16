@@ -1,0 +1,91 @@
+git merge and rebase 
+
+-Merge is to use merge data of one to another branch 
+- where as rebase use to allow developer to integrate the data in the branch
+
+how will give permission for newjoiner in your company
+
+how can you use to install 3 more node into the pods in kubernetes
+
+Process and system (docker)
+
+Write a sample yaml file
+---
+host: all
+tasks:
+Name: install webservers
+apt:
+   name: apache2
+   state: present
+
+
+Write a sample docker file
+
+FROM ubuntu 14.04 or nginx
+MAINTAINER maha      
+run apt-get update or yum update
+CMD "ping", "google.com" or "echo", "this is my first container"
+
+Sample shell script
+
+Vi ex.sh
+#! /bin/bash 
+echo "hello"
+echo "pradeep"
+pwd 
+esc :wq!
+sh ex.sh
+
+
+proc - process information
+dev - device files
+etc - configuration files
+var - variable files
+bin - user binaries 
+sbin - system binaries
+tmp - temporary files
+
+home - Home directories
+usr - user programs
+lib - system libraries
+boot - boot loader files
+opt - optional add on apps
+mnt - mount directory
+media - removable directories
+srv - service data
+
+
+
+
+how could you do docker file as a slave in jenkins pods
+Please mention some jenkins plugins
+CIDR range for 27 instances creation
+public subnet and private subnet
+
+SG and NACL
+IGW Internet gate way
+once after commit the code and how can you reback same commit for name change with out changing commit ID -( git commit --amend )
+Asked many about kubernetes
+How you use to build docker file the command you use
+
+How will you give file permission in git
+Which OS you have been using so far
+How to install Kubernetes and Jenkins
+Explain how your project work in the CI CD pipe line process
+ Continuuos intergration
+Continuos Deployment
+Continuos Delivery
+Password less authentication in ansible
+Network and application server in load balancer
+Days min hours time fixing for deploying server
+About flag asked in git
+Kubectl master is on pranthis or cloud
+Asked for terraform commands, RDS in amazon in other company
+How could you connect node of different servers and connect in kubectl
+
+fantansypowereleven - Dreameleven
+Mircoservises
+
+
+Meeting ID: 852 6916 7191
+Passcode: R08qFF

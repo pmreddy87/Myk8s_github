@@ -1,0 +1,53 @@
+1. Can you explain one of our CICD Pipeline
+
+2. What are stages in CI
+
+3. tools in various stages in CICD
+
+4. Public subnet and Private subnet
+
+5. I have a EC2 instance in private subnet and need to connect to S3 bucket.
+
+6. two instances you have to ssh both of them - which command you can use.
+
+7. one server loggedin but another cannot able to acces what problem might be.
+
+8. Which port you can check over there- Security group
+
+9. which command to check port no 22 connetion
+
+10. with pem you want to connect
+
+11. VPC peering
+
+12. in Private subnet have an instance how can able connnect to webserver onver internet
+
+13. Different types of load balancer, network load balancer and application load balancer
+
+14.what are the 7 layers of network loadbalancer
+
+15. what is the use of network loadbalancer
+
+16. in which case you can use network loadbalancer
+
+17. What have done with terraform IAC
+
+18. How can you create EKS cluster in Terraform 
+
+19. terraform file format is similar or AWSCLI format?
+
+20. Explained about terraform file creation procedure
+
+21. How can you promote code from one environment to another environment
+
+from DEV environment to QA environment.
+
+22. you have to create infrastructure in two different environments like EKS cluster in QA and Dev.
+
+23. single node cluster (one pod is silent another pod is writing some data to S3 bucket) but both are in different namespace in single node is it possible.
+
+24. to run a pod on all the nodes in kubernetes is it possible to copy on all the nodes
+
+25. which components of kubernetes can supports this issue to resolve.
+
+26. deploy with daemon set....

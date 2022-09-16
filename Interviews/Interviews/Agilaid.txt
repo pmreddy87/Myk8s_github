@@ -1,0 +1,39 @@
+Ping - to check from one instance to another instance working or not
+Ansible registry
+docker files limiations
+CMD and Entrypoint
+How can you work with maven with out internet connection
+is it possible to downlaod 200 images form hub.docker.com 
+is there any limitation are there in docker
+have you created k8s cluster
+what is kubectl and kubeadm
+
+on which way u can able to allow other person into your jenkins pipe line
+what is the way and i would like to know about its architecture
+
+How you secure your jenkins pipe line.
+
+wwhat types of plugins have you used in jenkins.
+
+have you written shell scripts
+
+have you worked with ansible host 
+ansbile inventory
+ansible 
+one of your pod has been failed and autoscaling also not been working, sns also not working
+then how could your find and rebuild it
+
+static inventory
+have you used dynamic inventory
+
+how can you command tag while creating aws instance through AWSCLI
+
+install awscli
+
+configure awscli
+
+whaat is web hooks how can you used to communcate with different AMI 
+
+
+
+

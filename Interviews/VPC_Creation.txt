@@ -1,0 +1,15 @@
+1. Create VPC with CIDr 192.168.0.0./22
+2. Create public sublic
+2. create private subnet
+3. create public routing table
+4. crate private routing table
+5. Associate public subnet with public routing table
+6. Associae privae subnet with private routing table
+7. create IGW
+8. Attach IGW with VPC
+9. Create public instance on public subnet
+
+this is all the steps are can by doing  GUI and same thing AWS CLI
+
+
+NAT gatway

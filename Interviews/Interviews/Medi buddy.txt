@@ -1,0 +1,96 @@
+MEDI BUDDY
+
+AWS
+How you can deploy server in AWS
+443 issue
+
+http
+https port no
+ssh port no 
+What is your back end stack and front end stack-
+pls write a command using IP
+what are the types of user login way access key and secrect other than this 3 types are there what are those
+what is NAT and SG
+what is internet gateway access and other
+RDS - what data base you are using in your project
+How could you stop paticular IP to access our server process how will stop explain
+what is the purpose of cloudwatch and what is autoscaling how and where to use 
+what is IAM programmatic access diff
+How could you migrate from one region to another in aws. ex. mumbai region to north varginia
+recent update in docker ?? some limitations created dont know
+Do know about ECR in aws
+asked about SQL also\
+differene between IAM user creation programmatic access and console access
+Programmatic access - use access key and secret key to login for AWS CLI, SDK,API
+console access - key uses password to login
+full form of NACL - network access control list (have to verify)
+SG - Security group
+where you are finding docker images
+S3 bucket creation and other questions from it
+
+
+
+LINUX
+how to search issue in the file - (sudo fsuk /dev/sdb)
+top commands
+kill command
+
+
+ANSIBLE
+
+TERRFORM
+tell about IAC
+about terraform
+
+
+GIT
+
+Kubernetes - 
+
+What is Kubectl and kubelet- 
+
+kubelet - the component that used run on all the machines in your cluster and
+do the things like starting the PODS and Containers
+
+
+kubectl : the command line until to talk to your cluster
+
+kubeadm : is a tool to provide kubeadm init and kubeadm join to best practices and "fast path" in 
+creation of Kubernetes
+Replication set and replica controller
+Name space
+what is service
+What is deployment
+
+
+
+
+How to use get connection in kubernetes in which mode by port mode
+All ports should be match
+write some commands which use in k8s
+what is namespace
+what is portnode
+
+
+
+Docker
+docker file
+what is start 
+What is CMD
+what is difference between run and copy
+
+
+
+Maven
+
+Jenkins
+
+Explain about jenkins CI CD pipe line
+what are plugins you used
+aws plugin
+maven plugin
+How will deploy a new server in your project process
+How will architect to deploy code into server
+SQL
+
+Write some files in shell scripting

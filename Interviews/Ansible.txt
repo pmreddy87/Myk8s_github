@@ -1,0 +1,206 @@
+	
+Ansible
+ - Ansible is a radically simple IT automation engine that automates cloud provisioning, configuration management, 
+   application deployment, and many other IT needs.	
+ - It does not require installation of special softwares or repositories on the target servers (hosts).
+ - It runs the code using SSH connection, with no agents required to be installed on remote systems (hosts).	
+ - Ansible works by connecting to your nodes and pushing out small programs, called "Ansible modules" to them. These programs are written to be resource models of the desired state of the system. 
+   Ansible then executes these modules (over SSH by default), and removes them when finished.	
+   
+   
+ Ansible is a opensource automation tool which is used to configure the servers or different environments. 
+By using ansible scripts you can configure environments like development,testing and pre-production. 
+Ansible script are called as ansible playbooks. 
+And in higher levels these playbook are called as ansible roles. 
+In this recipe we will discuss about ansible architecture
+
+uses:
+
+if you want to install httpd in 100 servers, by using one ansible script we can install httpd in all systems
+if you want to run python or shell scripts in different servers. we can use ansible to trigger that scripts.
+we can ansible ansible for application deployments.
+we can use ansible in continuous deployment.
+ansible is also used as orchestratio.n tool.
+using ansible we can provision the servers
+
+	
+Install Ansible
+  - Steps which are given in their website is enough and installation is easy
+  
+Ansible
+
+Ansible configuration file	
+	- Default location of ansible configuration is /etc/ansible/ansible.cfg
+		
+Ansible Inventory 
+	  Static Inventory
+		- inventory file default location is /etc/ansible/hosts, if file does'nt exits create new one.
+		- Default location of inventory file is /etc/ansible/hosts
+		   If the file is not present for the first time create it.
+		- We can create group of machines and group name should be defined 
+		  between [] braces.
+		- each line entry in the inventory file except group name is 
+          considered as a single target host machine
+		- we can use ip address / DNS / mapping name in the inventory
+		  for target host machine.	
+	
+Ansible playbook	
+	- It is a file also called ansible script where we write ansible tasks.
+	- This file is written in strict YAML foramt.
+    - Each playbook can contain multiple play, each play should start with "---"
+	  should end with "..."
+	- Each play can contain multiple tasks which are written in Dictionary / List format.	
+	- Each task will take new ssh connection to except the module defined in that task.
+	- To run a playbook
+		ansible-playbook <playbook_name>
+	- To run a playbook on a perticular hosts inventory file 
+		ansible-playbook -i <inventory_file_path> <playbook_name>
+
+	Example:
+	
+	---
+	 - name: Play to install git it is user defined 
+	   hosts: all
+	   become: true
+	   tasks:
+		 - name: Ansible apt install git it is user defined
+		   apt:
+			 name: git
+			 state: present		
+			 
+		 - name: Ansible apt install git it is user defined
+		   apt:
+			 name: nginx
+			 state: present	 
+	
+
+	
+Ansible facts 
+    - using setup module we can get the ansible fatcs 
+    - Ansible facts are the data related to the remote hosts including
+      OS related details, netwrok related details ....
+    - To list the facts we use setup module
+	    ansible all -n setup 
+		
+	---
+	  - name: Install packages based on target host
+		hosts: all
+		become: yes
+		tasks:
+		 - name: Install for Ubuntu linux
+		   when: ansible_distribution == "Ubuntu"
+		   apt:
+			name: git
+			state: present
+			update_cache: yes
+		 - name: Install for RedHat linux
+		   when: ansible_distribution == "RedHat"
+		   yum:
+			name: git
+			state: present
+			update_cache: yes
+ 	
+idempotent
+	- every OS have this capability of identification whether an operation is already perforemed or not.
+	- state is the field we use in ansible to control this capability.
+
+Ansible Vault 
+	How to secure ansible files.
+    - This feature allows us to secure the critical data present 
+       in ansible files.
+    - This will encrypt the files using AES256 algorithm and automatically 
+	  decrypts vault-encrypted files while executing it when the key is provided.
+	
+	Create a new yml file with vault
+		ansible-vault create <file_name>.yml
+	
+	Secure/encrypt already existing yml
+		ansible-vault encrypt <file_name>.yml
+	
+	To run a playbook which is secured with vault  
+		ansible-playbook --ask-vault-pass test.yml
+		
+	un-Secure/decrypt already existing yml
+		ansible-vault decrypt <file_name>.yml
+
+	To change the password of vault
+		ansible-vault rekey <file_name>.yml
+	
+	To view the content of vault file
+		ansible-vault view <file_name>.yml
+	
+	To edit the content of vault file
+		ansible-vault edit <file_name>.yml
+	
+Ansible roles 
+	- Create role: ansible-galaxy init <role_name>
+	- Roles are the framework through which we can organize our playbooks.
+	- Using roles we can divide complex playbooks in to smaller playbooks.
+		
+	ROLE STRUCTURE
+		.
+		├── README.md
+		├── defaults
+		│   └── main.yml
+		├── files
+		├── handlers
+		│   └── main.yml
+		├── meta
+		│   └── main.yml
+		├── tasks
+		│   └── main.yml
+		├── templates
+		├── tests
+		│   ├── inventory
+		│   └── test.yml
+		└── vars
+			└── main.yml
+	
+		TASKS: Contains modules that we want be executed by our role.
+
+		Handlers: Running operations on change
+			- handlers are the special type of tasks which will be executed 
+			  if there is a change in the source configuration file.
+			- we use nofity keywork to execute handlers in normal task.
+			- usually we use service module in handlers.
+		
+		Template
+			- A template in ansible is a file which contains all our configuration parameters.
+			  but the dynamic values are defined as variable.
+			- At runtime the variables are replaced with its values.
+		    	- Usually template file is written is .j2 file (Jinja2 templating engine format)
+			
+		files	
+			- A file with statict content which is used to copy to target machines.
+			- Can't define any dynamic values as variable.
+			  
+Assignment: Install tomcat using ansible role and change the port to 8091 using template.
+
+Assignment:
+	Terraform
+		- Create VPC with 1 private and 2 public subnet with all 
+		  other configurations (NAT, IGW, with bastian)
+		- Create alteast one ec2 in each subnet and do a password less 
+		  ssh between them
+		- Then call the below Ansible role
+		
+	Asible
+		- create a role which should install all packages to support
+		  tomcat.
+		- The port of tomcat should be 8081.  
+		- Deploy a sample war file in it.
+				
+Assignment: 
+	Write a ansible playbook to install multiple packages using single task ?
+		Is using with_items
+			
+			- name: Installing multiple packages with one task 
+			  apt: 
+				name: "{{ item }}"
+				update_cache: yes
+			  with_items:
+				- git
+				- nginx
+				- bc
+				- docker.ce	
+	- Dynamic Inventory 
